@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="post">
+		<table align="center">
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="username"/></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" name="password"/></td>
+			</tr>
+			<tr>
+				<td>验证码：</td>
+				<td>
+					<input type="text" name="checkCode" size="5" />
+					<img style="cursor:pointer;" src="/day14/checkCodeServlet" width="100" height="26" border="0" onclick="reflushImage(this);" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="登录"/>
+					<input type="reset" value="重置"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+<script>
+	//当用户点击图片时，刷新图片内容
+	function reflushImage( img ){
+		//修改img对象的src属性，改为生成验证码图片的Servlet（相当于要重新访问Servlet，Servlet重新执行，生成新的验证码图片）
+		var d = new Date();
+		//每次访问Servlet时所带的参数值不同，就会被认为是不同的请求，可以实现点击图片，刷新图片的效果
+		//参数名叫什么，无所谓，服务端也无需处理此参数
+		img.src = "/day14/checkCodeServlet?t="+d.getTime();
+	}
+
+</script>

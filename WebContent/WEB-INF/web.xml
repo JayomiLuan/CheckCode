@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+	
+	
+	
+	<!-- 测试response的Servlet -->
+	<servlet>
+		<servlet-name>test</servlet-name>
+		<servlet-class>cn.itcast.day14.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test</servlet-name>
+		<url-pattern>/testServlet</url-pattern>	
+	</servlet-mapping>
+
+
+	<!-- 文件下载的Servlet -->
+	<servlet>
+		<servlet-name>download</servlet-name>
+		<servlet-class>cn.itcast.day14.servlet.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>download</servlet-name>
+		<url-pattern>/downloadServlet</url-pattern>	
+	</servlet-mapping>
+
+
+
+	<!-- 生成验证码的Servlet -->
+	<servlet>
+		<servlet-name>checkCode</servlet-name>
+		<servlet-class>cn.itcast.day14.servlet.CheckCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkCode</servlet-name>
+		<url-pattern>/checkCodeServlet</url-pattern>	
+	</servlet-mapping>
+
+	<!-- 测试重定向的Servlet -->
+	<servlet>
+		<servlet-name>redirect</servlet-name>
+		<servlet-class>cn.itcast.day14.servlet.TestRedirectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>redirect</servlet-name>
+		<url-pattern>/redirectServlet</url-pattern>	
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>
